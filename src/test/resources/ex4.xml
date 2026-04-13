@@ -3,7 +3,7 @@
     <test name="TestNGTests">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="Ex2"/>
+            <class name="ECommerceExample"/>
             <class name="Ex3"/>
         </classes>
     </test>

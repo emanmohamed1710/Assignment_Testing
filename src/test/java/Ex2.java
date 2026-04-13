@@ -18,14 +18,14 @@ public class Ex2 {
     @Parameters("browser")
     @BeforeClass
     public void setup(String browser) {
-        /*if (browser.equalsIgnoreCase("chrome")) {
+        if (browser.equalsIgnoreCase("chrome")) {
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
         } else if (browser.equalsIgnoreCase("firefox")) {
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver() ;
-        }*/
-        if (browser.equalsIgnoreCase("chrome")) {
+        }
+        /*if (browser.equalsIgnoreCase("chrome")) {
             ChromeOptions options = new ChromeOptions();
 
             options.addArguments("--headless=new");
@@ -36,7 +36,7 @@ public class Ex2 {
             driver = new ChromeDriver(options);        }
         else {
             driver = new FirefoxDriver();
-        }
+        }*/
         driver.get(" https://demo.guru99.com/test/login.html");
 
     }
