@@ -1,0 +1,15 @@
+<suite name="CrossBrowser" parallel="tests" thread-count="2">
+    <test name="ChromeTest">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="Ex2"/>
+        </classes>
+    </test>
+
+    <test name="FireFoxTest">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="Ex2"/>
+        </classes>
+    </test>
+</suite>
