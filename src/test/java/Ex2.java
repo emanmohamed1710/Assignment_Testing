@@ -2,6 +2,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -17,12 +18,24 @@ public class Ex2 {
     @Parameters("browser")
     @BeforeClass
     public void setup(String browser) {
-        if (browser.equalsIgnoreCase("chrome")) {
+        /*if (browser.equalsIgnoreCase("chrome")) {
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
         } else if (browser.equalsIgnoreCase("firefox")) {
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver() ;
+        }*/
+        if (browser.equalsIgnoreCase("chrome")) {
+            ChromeOptions options = new ChromeOptions();
+
+            options.addArguments("--headless=new");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
+            options.addArguments("--disable-gpu");
+
+            driver = new ChromeDriver(options);        }
+        else {
+            driver = new FirefoxDriver();
         }
         driver.get(" https://demo.guru99.com/test/login.html");
 
