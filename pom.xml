@@ -40,6 +40,12 @@
             <scope>test</scope>
         </dependency>
 
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-java</artifactId>
+                <version>4.21.0</version> <!-- or latest -->
+            </dependency>
+
     </dependencies>
 
 </project>
